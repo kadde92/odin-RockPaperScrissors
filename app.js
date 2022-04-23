@@ -12,30 +12,74 @@ function playerTurn() {
 
 function playRound(playerSelection, computerSelection) {
     if (playerSelection === 'Rock' && computerSelection === 'Scissors') {
-        return `You win! ${playerSelection} beats ${computerSelection}.`
+        console.log(`You win! ${playerSelection} beats ${computerSelection}.`)
+        return 1;
 
     } else if (playerSelection === 'Scissors' && computerSelection === 'Paper') {
-        return `You win! ${playerSelection} beats ${computerSelection}.`
+        console.log(`You win! ${playerSelection} beats ${computerSelection}.`)
+        return 1;
 
     } else if (playerSelection === 'Paper' && computerSelection === 'Rock') {
-        return `You win! ${playerSelection} beats ${computerSelection}.`
+        console.log(`You win! ${playerSelection} beats ${computerSelection}.`)
+        return 1;
 
     } else if (playerSelection === 'Paper' && computerSelection === 'Scissors') {
-        return `You lose! ${playerSelection} beats ${computerSelection}.`
+        console.log(`You lose! ${playerSelection} beats ${computerSelection}.`)
+        return 0;
 
     } else if (playerSelection === 'Scissors' && computerSelection === 'Rock') {
-        return `You lose! ${playerSelection} beats ${computerSelection}.`
+        console.log( `You lose! ${playerSelection} beats ${computerSelection}.`)
+        return 0;
 
     } else if (playerSelection === 'Rock' && computerSelection === 'Paper') {
-        return `You lose! ${playerSelection} beats ${computerSelection}.`
+        console.log(`You lose! ${playerSelection} beats ${computerSelection}.`)
+        return 0;
+
+    } else if (playerSelection = computerSelection) {
+        console.log("It's a draw. You need to choose again.")
     }
 
 }
 
-let player = playerTurn()
-let comp = computerPlay()
+//loop that first calls for the user to set r,c,p --> adter that same for for computer
+// i = 0, userScore = 0, compScore = 0,
+// after the loop has 5 rounds, make a separate if-clause where to check the winner by comparing the premnetioned variables
+function game() {
+    let i = 0;
+    let userScore = 0;
+    let compScore = 0;
+    while (i < 5) {
+        let player = playerTurn()
+        let comp = computerPlay()
+        let firstRound = playRound(player,comp);
+        
+        if (firstRound === 1) {
+            i++;
+            userScore++;
+        } else if (firstRound === 0) {
+            i++;
+            compScore++;
+        }
+    
+        
+    }
 
-let firstRound = playRound(player,comp);
+    if (userScore > compScore) {
+        console.log("User wins")
+    } else if (compScore > userScore) {
+        console.log("Computer wins")
+    } else {
+        console.log("Something went wrong")
+    }
+    
+}
+
+
+
+// let player = playerTurn()
+// let comp = computerPlay()
+
+// let firstRound = playRound(player,comp);
 
 
 
