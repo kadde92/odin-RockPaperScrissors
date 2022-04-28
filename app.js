@@ -59,9 +59,7 @@ function game() {
         } else if (firstRound === 0) {
             i++;
             compScore++;
-        }
-    
-        
+        } 
     }
 
     if (userScore > compScore) {
@@ -90,3 +88,29 @@ paper wins rock
 rock loses paper
 paper loses scissor
 scissor loses rock*/
+
+// adding queryselectors to the buttons (own button for every button)
+// const rock = document.querySelector('#rock')
+// const paper = document.querySelector('#paper')
+// const scissors = document.querySelector('#scissors')
+
+const buttons = document.querySelectorAll('button')
+
+
+buttons.forEach((button) => {
+    button.addEventListener('click', () => {
+        console.log(button.textContent)
+        playRound(button.textContent,computerPlay())
+    });
+});
+
+// const NewGame = document.querySelector('#new')
+
+// // eventlisteners for the playerschoise buttons, after the button is cliked we should receive its textcontent and add it to the playround() function
+
+// rock.addEventListener('click', () =>{
+//     playRound(rock.textContent,computerPlay())
+// });
+
+
+
