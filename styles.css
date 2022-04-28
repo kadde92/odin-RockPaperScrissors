@@ -1,0 +1,15 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #fb0f01;
+    font-family: 'Roboto', sans-serif;
+}
+
+button {
+    cursor: pointer;
+    background-color: #000;
+    border: 1px solid #fdfdfd;
+    border-radius: 3px;
+    color: #fdfdfd;
+}
