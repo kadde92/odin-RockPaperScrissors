@@ -12,4 +12,19 @@ button {
     border: 1px solid #fdfdfd;
     border-radius: 3px;
     color: #fdfdfd;
+    padding: 5px;
+  
+}
+
+#new {
+    margin-top: 10px;
+}
+
+.score {
+    margin: 5px 0px;
+}
+
+.finalscore {
+    font-size: large;
+    padding: 5px 0px;
 }
